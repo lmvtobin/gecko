@@ -28,7 +28,7 @@
  * hyperbolic volumes
  * 
  * Results will be printed to console, and optionally saved to
- * ../sample3-data/volumes_nN_S_I.txt or ../sample3-data/volumes_knot_nN_S_I.txt
+ * ../data/sample3/volumes_nN_S_I.txt or ../data/sample3/volumes_knot_nN_S_I.txt
  * where
  * - N is the grid size
  * - S is the sample size
@@ -181,7 +181,7 @@ int main(int argc, char* argv[]) {
     std::cout << "  [took " << secondsSince(start) << "s]\n";
 
     if (saveResults) {
-        std::filesystem::create_directories("../sample3_data"); // create storage/output directory (if it doesn't exist)
+        std::filesystem::create_directories("../data/sample3"); // create storage/output directory (if it doesn't exist)
         std::string baseFilename = "";
         if (knotOnly) {
             baseFilename = "volumes_knot_n"+std::to_string(n)+"_"+std::to_string(repeats);
@@ -192,14 +192,14 @@ int main(int argc, char* argv[]) {
         int filenum = 0;
         while (true) {
             filename = baseFilename + "_" + std::to_string(filenum);
-            if (!std::filesystem::exists("../sample3_data/"+filename+".txt")) {
+            if (!std::filesystem::exists("../data/sample3/"+filename+".txt")) {
                 break;
             } else {
                 ++filenum;
             }
         }
         std::ofstream writer;
-        writer.open("../sample3_data/"+filename+".txt");
+        writer.open("../data/sample3/"+filename+".txt");
         writer << n << " grid size, " << repeats << " samples\n";
         writer << volumes_hyp.size() << " likely hyperbolic ("<< 100.0*volumes_hyp.size()/repeats << "%)\n";
         writer << mean << " mean volume of likely hyperbolic samples\n";
@@ -220,7 +220,7 @@ int main(int argc, char* argv[]) {
             writer << "\n";
         }
         writer.close();
-        std::cout << "Saved to " + filename + "\n";
+        std::cout << "Saved to ../data/sample3/" + filename + "\n";
     }
 
     return 0;

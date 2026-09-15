@@ -30,7 +30,7 @@
  * Connected sum components are guaranteed to be prime, but not necessarily minimal triangulations.
  * 
  * Results will be printed to console, and optionally saved to
- * ../exh3-data/nN.txt
+ * ../data/exh3/nN.txt
  * where N is the grid size
  * 
  * Save format is one line per simplified isomorphism signature / combinatorial type, of the form:
@@ -241,9 +241,9 @@ long factorial(int n)
 
 void saveToFile(std::map<std::string,int> counts, std::string filename)
 {
-    std::filesystem::create_directories("../exh3_data"); // create storage/output directory (if it doesn't exist)
+    std::filesystem::create_directories("../data/exh3"); // create storage/output directory (if it doesn't exist)
     std::ofstream writer;
-    writer.open("../exh3_data/"+filename+".txt");
+    writer.open("../data/exh3/"+filename+".txt");
     for (auto pair : counts)
     {
         writer << pair.first << " : " << pair.second << " : ";
@@ -256,7 +256,7 @@ void saveToFile(std::map<std::string,int> counts, std::string filename)
     }
     writer.close();
 
-    std::cout << "Saved to ../exh3_data/" << filename << ".txt\n";
+    std::cout << "Saved to ../data/exh3/" << filename << ".txt\n";
 }
 
 int secondsSince(std::chrono::time_point<std::chrono::high_resolution_clock> start) {

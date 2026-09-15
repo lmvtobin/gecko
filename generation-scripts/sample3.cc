@@ -29,7 +29,7 @@
  * Connected sum components are guaranteed to be prime, but not necessarily minimal triangulations.
  * 
  * Results will be printed to console, and optionally saved to
- * ../sample3-data/nN_S_I.txt or ../sample3-data/knots_nN_S_I.txt
+ * ../data/sample3/nN_S_I.txt or ../data/sample3/knots_nN_S_I.txt
  * where
  * - N is the grid size
  * - S is the sample size
@@ -286,19 +286,19 @@ void decomposeConsumer(int workerID) {
 
 void saveToFile(std::map<std::string,int> counts, std::string baseFilename)
 {
-    std::filesystem::create_directories("../sample3_data"); // create storage/output directory (if it doesn't exist)
+    std::filesystem::create_directories("../data/sample3"); // create storage/output directory (if it doesn't exist)
     std::string filename = baseFilename;
     int filenum = 0;
     while (true) {
         filename = baseFilename + "_" + std::to_string(filenum);
-        if (!std::filesystem::exists("../sample3_data/"+filename+".txt")) {
+        if (!std::filesystem::exists("../data/sample3/"+filename+".txt")) {
             break;
         } else {
             ++filenum;
         }
     }
     std::ofstream writer;
-    writer.open("../sample3_data/"+filename+".txt");
+    writer.open("../data/sample3/"+filename+".txt");
     for (auto pair : counts)
     {
         writer << pair.first << " : " << pair.second << " : ";
@@ -311,7 +311,7 @@ void saveToFile(std::map<std::string,int> counts, std::string baseFilename)
     }
     writer.close();
 
-    std::cout << "Saved to ../sample3_data/" << filename << ".txt\n";
+    std::cout << "Saved to ../data/sample3/" << filename << ".txt\n";
 }
 
 int secondsSince(std::chrono::time_point<std::chrono::high_resolution_clock> start) {

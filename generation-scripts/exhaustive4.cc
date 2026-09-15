@@ -28,7 +28,7 @@
  * and simplifies the resulting ideal triangulations for non-closed 4-manifolds.
  * 
  * Results will be printed to console, and optionally saved to
- * ../exh4-data/nN_closedSC.txt and ../exh4-data/nN_ideal.txt
+ * ../data/exh4/nN_closedSC.txt and ../data/exh4/nN_ideal.txt
  * where N is the grid size
  * 
  * For closed (and simply connected) 4-manifolds, save format is one line per intersection form:
@@ -183,9 +183,9 @@ void gridConsumer() {
 
 void saveToFile(std::map<std::string,int> counts, std::string filename)
 {
-    std::filesystem::create_directories("../exh4_data"); // create storage/output directory (if it doesn't exist)
+    std::filesystem::create_directories("../data/exh4_data"); // create storage/output directory (if it doesn't exist)
     std::ofstream writer;
-    writer.open("../exh4_data/"+filename+".txt");
+    writer.open("../data/exh4_data/"+filename+".txt");
     for (auto pair : counts)
     {
         writer << pair.first << " : " << pair.second << " : ";
@@ -199,7 +199,7 @@ void saveToFile(std::map<std::string,int> counts, std::string filename)
     }
     writer.close();
 
-    std::cout << "Saved to ../exh4_data/" << filename << ".txt\n";
+    std::cout << "Saved to ../data/exh4_data/" << filename << ".txt\n";
 }
 
 void saveToFile(std::map<formTup,int> counts, std::string filename)

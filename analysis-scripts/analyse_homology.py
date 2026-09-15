@@ -47,9 +47,9 @@ H1_counts_triv_H2 = {}
 for n in range(2,max_size+1):
     samples = []
     if (knot):
-        samples = gecko.read_sample_data("../sample3_data/knots_n"+str(n)+"_"+str(sample_size)+"_0.txt")
+        samples = gecko.read_sample_data("../data/sample3/knots_n"+str(n)+"_"+str(sample_size)+"_0.txt")
     else:
-        samples = gecko.read_sample_data("../sample3_data/n"+str(n)+"_"+str(sample_size)+"_0.txt")
+        samples = gecko.read_sample_data("../data/sample3/n"+str(n)+"_"+str(sample_size)+"_0.txt")
     sample_H1_counts = {}
     sample_H2_counts = {}
     sample_H1_counts_triv_H2 = {}

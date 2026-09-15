@@ -56,11 +56,11 @@ if (knot):
 
 for n in range(2,max_size+1):
     sample_volumes = []
-    if os.path.isfile("../sample3_data/volumes_"+knot_ex1+"n"+str(n)+"_"+str(sample_size)+"_0.txt"):
-        samples = gecko.read_volume_data("../sample3_data/volumes_"+knot_ex1+"n"+str(n)+"_"+str(sample_size)+"_0.txt")
+    if os.path.isfile("../data/sample3/volumes_"+knot_ex1+"n"+str(n)+"_"+str(sample_size)+"_0.txt"):
+        samples = gecko.read_volume_data("../data/sample3/volumes_"+knot_ex1+"n"+str(n)+"_"+str(sample_size)+"_0.txt")
         sample_volumes = [pair[0] for pair in samples[0]]
-    elif os.path.isfile("../sample3_data/"+knot_ex2+"n"+str(n)+"_"+str(sample_size)+"_0.txt"):
-        samples = gecko.read_sample_data("../sample3_data/"+knot_ex2+"n"+str(n)+"_"+str(sample_size)+"_0.txt")
+    elif os.path.isfile("../data/sample3/"+knot_ex2+"n"+str(n)+"_"+str(sample_size)+"_0.txt"):
+        samples = gecko.read_sample_data("../data/sample3/"+knot_ex2+"n"+str(n)+"_"+str(sample_size)+"_0.txt")
         sample_volumes = []
         for (sigs,grids) in samples:
             hyp = True

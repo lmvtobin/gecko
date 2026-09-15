@@ -2,29 +2,7 @@
 ## Software for Random 3- and 4-Manifolds via Grid Kirby
 ### v0.1 2026-08-14
 
-```
-* * * * * * * * * * * * * * * * * * * * *
-*                           o---------x *
-*     G e c K o         x-o |  #  w w | *
-*                     o-|-x |       w | *
-*       Grid          x-|---|---o     | *
-*       Kirby     x-----o   |   |   # | *
-*                 |     x---|---|-----o *
-*             x---o     |   |   | x-o   *
-*             |     o---|---x o-|-|-x   *
-*         o-x |     |   |     | x-o     *
-*       x-|-|-o x---|---o     |         *
-*       o-x |   |   |     o---x         *
-* o---------|---|---x     |             *
-* |         |   |   o-----x             *
-* |     o---|---|---|-x                 *
-* |     |   |   | x-|-o        By       *
-* |   x-|---o   | o-x         Lucy      *
-* | o-|-x       |             Tobin     *
-* x-|-o         |                       *
-*   x-----------o                       *
-* * * * * * * * * * * * * * * * * * * * *
-```
+<img src="logo.svg" alt="GecKo logo" width="500"/>
 
 ## Overview
 
